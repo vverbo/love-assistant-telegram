@@ -1,6 +1,5 @@
 import os
 import time
-from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, filters
 from openai import OpenAI
@@ -8,10 +7,15 @@ from openai import OpenAI
 #print("🔐 OPENAI_API_KEY =", os.getenv("OPENAI_API_KEY"))
 
 # Load secrets from .env
-load_dotenv()
+
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 ASSISTANT_ID = os.getenv("ASSISTANT_ID")
+
+print("🧪 DEBUG: TELEGRAM_TOKEN =", TELEGRAM_TOKEN)
+print("🧪 DEBUG: OPENAI_API_KEY =", OPENAI_API_KEY)
+print("🧪 DEBUG: ASSISTANT_ID =", ASSISTANT_ID)
+
 
 openai_client = OpenAI(api_key=OPENAI_API_KEY)
 
