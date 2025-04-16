@@ -1,6 +1,6 @@
 services:
-  - type: worker
-    name: love-assistant-telegram
+  - type: web
+    name: suedtirol-tourism-bot
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: python bot.py
@@ -11,4 +11,3 @@ services:
         sync: false
       - key: ASSISTANT_ID
         sync: false
-
